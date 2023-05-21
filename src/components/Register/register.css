@@ -1,0 +1,26 @@
+body{
+    padding-top: 10%;
+  }
+  .login{
+    width: 27%;
+    margin: auto;
+    height: auto;
+    /* border: 1px solid black; */
+    padding: 1%;
+    box-sizing: border-box;
+    border-radius: 25px;
+    /* background-color: rgb(237, 239, 243); */
+    box-shadow: 0 5px 5px 5px #cccc;
+  }
+  .input{
+    width: 90%;
+    margin: 3% auto;
+    /* height: 3vh; */
+  }
+  .login Form.Control{
+    height: 3vh;
+  }
+  .login-btn{
+    margin: 5% 0% 0 6%;
+    width: 87%;
+  }
