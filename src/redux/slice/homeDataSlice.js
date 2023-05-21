@@ -8,11 +8,13 @@ export const fetchHomeData = createAsyncThunk("homedata/fetchHomeData", async ()
       authorization: token,
     },
   };
-
+// console.log(token)
   try {
     const response = await axios.get("https://blog-app-backend-36zq.onrender.com/api/v1/posts", config);
-    console.log(response)
-    return response.data;
+    // console.log(response.data)
+    // console.log(r)
+    // console.log(response.data.status)
+    return response.data.users;
 
   } catch (error) {
     console.log(error);
@@ -20,10 +22,12 @@ export const fetchHomeData = createAsyncThunk("homedata/fetchHomeData", async ()
   }
 });
 
+
+
 const homeDataSlice = createSlice({
   name: "homedata",
   initialState: {
-    data: [],
+    data:null,
     error: null,
   },
 
@@ -32,7 +36,7 @@ const homeDataSlice = createSlice({
       console.log("pending...");
     });
     builder.addCase(fetchHomeData.fulfilled, (state, action) => {
-      state.data.push(action.payload);
+      state.data = action.payload;
       // console.log(action.payload)
       console.log("fulfilled");
     });
